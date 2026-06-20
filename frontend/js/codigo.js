@@ -373,7 +373,7 @@ function deletarComentario(id) {
     })
   };
 
-  fetch(`${API_URL}/comentarios`, options)
+  fetch(`${API_URL}/comentarios/${id}`, options)
     .then(resposta => {
       if (!resposta.ok) {
         throw new Error("Erro ao deletar comentário");
@@ -414,7 +414,7 @@ formNovoComentario.addEventListener("submit", (e) => {
   console.log("Post ID:", postIdComentarioAtual);
   console.log("Usuário:", idUsuario);
 
-  fetch(`${API_URL}/comentarios/${id}`, options)
+  fetch(`${API_URL}/comentarios`, options)
     .then(resposta => {
       if (!resposta.ok) {
         throw new Error("Houve algum erro ao comentar no post");
