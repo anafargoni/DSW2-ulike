@@ -1,11 +1,10 @@
 const { Pool } = require('pg');
 
 const pool = new Pool({
-    user: 'usuario',
-    host: 'database',
-    database: 'bancodados',
-    password: 'senha',
-    port: 5432,
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
 // Função usada para operações ACID simples
