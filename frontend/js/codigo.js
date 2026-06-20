@@ -1,3 +1,5 @@
+const API_URL = "https://dsw2-ulike.onrender.com/";
+
 let usuarios = [];
 
 let postIdComentarioAtual = null;
@@ -5,7 +7,7 @@ let idComentarioAtual = null;
 let idUsuarioPostAtual = null;
 
 async function carregarUsuarios() {
-  let resposta = await fetch("http://localhost:3000/usuarios");
+  let resposta = await fetch(`${API_URL}/usuarios`);
   usuarios = await resposta.json();
 }
 
@@ -33,7 +35,7 @@ function carregarPosts() {
 
   document.getElementById("listaPosts").innerText = "";
 
-  fetch("http://localhost:3000/posts")
+  fetch(`${API_URL}/posts`)
     .then((resposta) => {
       if (!resposta.ok) {
         throw new Error("Erro na requisição");
@@ -194,7 +196,7 @@ function adicionarPost(post) {
       })
     };
 
-    fetch("http://localhost:3000/likes", options)
+    fetch(`${API_URL}/likes`, options)
       .then(resposta => {
         if (!resposta.ok) {
           throw new Error("Houve algum erro ao curtir/descurtir o post");
@@ -272,7 +274,7 @@ function deletarPost(id) {
     })
   };
 
-  fetch("http://localhost:3000/posts/" + id, options)
+  fetch(`${API_URL}/comentarios`, options)
     .then(resposta => {
       if (!resposta.ok) {
         throw new Error("Erro ao deletar post");
@@ -371,7 +373,7 @@ function deletarComentario(id) {
     })
   };
 
-  fetch("http://localhost:3000/comentarios/" + id, options)
+  fetch(`${API_URL}/comentarios/${id}`, options)
     .then(resposta => {
       if (!resposta.ok) {
         throw new Error("Erro ao deletar comentário");
@@ -412,7 +414,7 @@ formNovoComentario.addEventListener("submit", (e) => {
   console.log("Post ID:", postIdComentarioAtual);
   console.log("Usuário:", idUsuario);
 
-  fetch("http://localhost:3000/comentarios", options)
+  fetch(`${API_URL}/comentarios/${id}`, options)
     .then(resposta => {
       if (!resposta.ok) {
         throw new Error("Houve algum erro ao comentar no post");
@@ -447,7 +449,7 @@ formEditarComentario.addEventListener("submit", (e) => {
     })
   };
 
-  fetch("http://localhost:3000/comentarios/" + idComentarioAtual, options)
+  fetch(`${API_URL}/comentarios/${idComentarioAtual}`, options)
     .then(resposta => {
       if (!resposta.ok) {
         throw new Error("Houve algum erro ao comentar no post");
@@ -506,7 +508,7 @@ formCadastro.addEventListener("submit", (e) => {
     })
   };
 
-  fetch("http://localhost:3000/usuarios", options)
+  fetch(`${API_URL}/usuarios`, options)
     .then(resposta => {
       if (!resposta.ok) {
         throw new Error("Erro na requisição");
@@ -548,7 +550,7 @@ formLogin.addEventListener("submit", (e) => {
     })
 
   }
-  fetch("http://localhost:3000/usuarios/login", options)
+  fetch(`${API_URL}/usuarios/login`, options)
     .then((resposta) => {
       return resposta.json();
     })
@@ -597,7 +599,7 @@ formNovoPost.addEventListener("submit", (e) => {
   }
 
   if (textoPost || imgPost) {
-    fetch("http://localhost:3000/posts", options)
+    fetch(`${API_URL}/posts`, options)
       .then((resposta) => {
         if (!resposta.ok) {
           console.log(resposta.status);
@@ -641,7 +643,7 @@ formEditarPost.addEventListener("submit", (e) => {
     })
   };
 
-  fetch("http://localhost:3000/posts/" + idUsuarioPostAtual, options)
+  fetch(`${API_URL}/posts/${idUsuarioPostAtual}`, options)
     .then(resposta => {
       if (!resposta.ok) {
         throw new Error("Houve algum erro ao comentar no post");
