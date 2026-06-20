@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULike</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-body-tertiary minha-navbar mb-4">
+        <div class="container-fluid bg-sucess">
+            <a class="navbar-brand text-white">ULike</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"aria-expanded="false">Conta</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" id="abrirCadastro">Cadastrar</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" id="abrirLogin">Entrar</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" id="btnLogout">Sair</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <a class="nav-link fw-bold fs-4" id="abrirNovoPost" style="display:none; cursor:pointer; color:white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                        class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                    </svg>
+                </a>
+                <span id="usuarioLogadoTexto" class="navbar-text"></span>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+
+        <form id="formLogin" style="display:none;" class="card p-3 mb-4">
+            <h3>Login</h3>
+            <input name="loginLogin" type="text" class="form-control mb-2" placeholder="Login" required>
+            <input name="senhaLogin" type="password" class="form-control mb-2" placeholder="Senha" required>
+            
+            <button id="btnLogin" type="submit" class="btn btn-primary login">
+                Entrar
+            </button>
+        </form>
+        <form id="formCadastro" style="display:none;" class="card p-3 mb-4">
+            <h3>Cadastro</h3>
+            <input name="nomeCadastro" type="text" class="form-control mb-2" placeholder="Nome" required>
+            <input name="loginCadastro" type="text" class="form-control mb-2" placeholder="Login" required>
+            <input name="senhaCadastro" type="password" class="form-control mb-2" placeholder="Senha" required>
+            <input name="fotoPerfil" type="url" class="form-control mb-2" placeholder="URL da foto de perfil">
+            <button id="btnCadastro" type="submit" class="btn btn-success">
+                Cadastrar
+            </button>
+        </form>
+
+        <form id="formNovoPost" class="card p-3 mb-4" style="display:none;">
+            <h3>Novo post</h3>
+            <textarea name="textoPost" class="form-control mb-2" placeholder="No que você está pensando?"></textarea>
+            <input name="imgPost" type="url" class="form-control mb-2" placeholder="URL da imagem do post">
+            <button type="submit" class="btn btn-dark" id="btnPublicar">Publicar</button>
+        </form>
+        <form id="formNovoComentario" class="card p-3 mb-4  " style="display:none;">
+            <h3>Novo comentário</h3>
+            <textarea name="textoComentario" class="form-control mb-2" placeholder="Escreva um comentário"></textarea>
+            <button type="submit" class="btn btn-dark" id="btnPublicar">Publicar</button>
+        </form>
+
+        <form id="formEditarPost" class="card p-3 mb-4" style="display:none;">
+            <h3>Editar post</h3>
+            <textarea name="textoEditarPost" class="form-control mb-2" placeholder="No que você está pensando?"></textarea>
+            <input name="imgEditarPost" type="url" class="form-control mb-2" placeholder="URL da imagem do post">
+            <button type="submit" class="btn btn-dark" id="btnPublicar">Pronto</button>
+        </form>
+        <form id="formEditarComentario" class="card p-3 mb-4" style="display:none;">
+            <h3>Editar comentário</h3>
+            <textarea name="textoEditarComentario" class="form-control mb-2" placeholder="Escreva o comentário"></textarea>
+            <button type="submit" class="btn btn-dark" id="btnPublicar">Pronto</button>
+        </form>
+
+        <div id="listaPosts"></div>
+
+    </div>
+    <script src="js/codigo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

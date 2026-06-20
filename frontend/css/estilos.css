@@ -1,0 +1,124 @@
+#btnLogin,
+#btnCadastro,
+#btnPublicar {
+  background-color: #d14e8d;
+  color: white;
+  border: none;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#btnLogin:hover,
+#btnCadastro:hover, 
+#btnPublicar:hover {
+  background-color: #5c1738;
+  color: white;
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #ddd6fe;
+}
+
+.bg-sucess {
+  background-color: #d14e8d;
+  color: white;
+  padding: 10px;
+  margin-top: -10px;
+}
+
+.btn-curtir i{
+  color:#e63946 !important;
+  transition: transform 0.25s ease;
+}
+
+.btn-curtir:hover i{
+  transform: scale(1.4);
+}
+
+.btn-curtir{
+  background: transparent;
+  border: none;
+}
+
+.bi-heart,
+.bi-heart-fill{
+  color:#e63946 !important;
+  transition: transform 0.2s ease;
+}
+
+.bi-heart:hover,
+.bi-heart-fill:hover{
+  transform: scale(1.4);
+}
+.comentario{
+  background-color: #ffffff;
+  padding:8px 12px;
+  border-radius:10px;
+  margin-top:6px;
+  font-size:14px;
+}
+
+.comentario strong{
+  color:#d14e8d;
+  margin-right:5px;
+}
+
+.comentario-data{
+  display:block;
+  font-size:12px;
+  color:gray;
+}
+
+.comentarios{
+  margin-top:10px;
+  border-top:1px solid #eee;
+  padding-top:10px;
+}
+
+.btn-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 1.2rem;
+  transition: color 0.2s;
+  color: #dc3545; 
+}
+
+.btn-icon:active i {
+  color: white; 
+  background-color: #dc3545;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.avatar-post {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.post-usuario-container {
+  display: flex;
+  align-items: center;
+}
+
+.card-img-top {
+  width: 100%;      
+  max-height: 300px; 
+  object-fit: cover;
+  border-radius: 10px; 
+  margin-top: 10px; 
+}
+
+#listaPosts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  margin-top: 20px;
+  align-items: start;
+}
