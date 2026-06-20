@@ -1,4 +1,4 @@
-const API_URL = "https://dsw2-ulike.onrender.com/";
+const API_URL = "https://dsw2-ulike.onrender.com";
 
 let usuarios = [];
 
@@ -274,7 +274,7 @@ function deletarPost(id) {
     })
   };
 
-  fetch(`${API_URL}/comentarios`, options)
+  fetch(`${API_URL}/posts/${id}`, options)
     .then(resposta => {
       if (!resposta.ok) {
         throw new Error("Erro ao deletar post");
@@ -373,7 +373,7 @@ function deletarComentario(id) {
     })
   };
 
-  fetch(`${API_URL}/comentarios/${id}`, options)
+  fetch(`${API_URL}/comentarios`, options)
     .then(resposta => {
       if (!resposta.ok) {
         throw new Error("Erro ao deletar comentário");
